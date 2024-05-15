@@ -377,6 +377,7 @@ th {
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
+  --grey-25: hsla(231, 7%, 60%, .25);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -404,6 +405,17 @@ h1 {
   line-height: 100%;
 }
 
+label {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+button {
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+}
+
 /* Attribution */
 .attribution {
   position: absolute;
@@ -422,4 +434,46 @@ h1 {
 .attribution p {
   font-size: 11px;
   margin: 0;
+}
+
+.card__picture {
+  width: 100%;
+}
+.card__content {
+  padding: 2.5rem 1.5rem;
+}
+.card__content > h1, .card__content > p {
+  margin-bottom: 1.5rem;
+}
+.card__content ul {
+  margin-bottom: 2.56rem;
+}
+.card__content ul > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.63rem;
+}
+.card__content ul > li:last-child {
+  margin-bottom: 0;
+}
+.card__content__form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.card__content__form input {
+  border: 1px solid var(--grey-25);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.card__content__form input::placeholder {
+  opacity: 0.5;
+}
+.card__content__form button {
+  background-color: var(--dark-slate-grey);
+  padding: 1.12rem 1rem 0.87rem;
+  width: 100%;
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */
