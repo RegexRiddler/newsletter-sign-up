@@ -5,6 +5,8 @@
 @use 'attribution';
 
 .card {
+  display: block;
+
   &__picture {
     width: 100%;
   }
@@ -48,13 +50,46 @@
           opacity: .5;
         }
       }
-
-      button {
-        background-color: var(--dark-slate-grey);
-        padding: 1.12rem 1rem .87rem;
-        width: 100%;
-        border-radius: 8px;
-      }
     }
   }
+}
+
+.success {
+  padding: 9.31rem 1.5rem 2.5rem;
+  display: none;
+  grid-template-rows: repeat(3, max-content) auto;
+  height: 100vh;
+
+  img {
+    margin-bottom: 2.5rem;
+  }
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  div {
+    height: 100%;
+    display: flex;
+  }
+
+  div button {
+    align-self: flex-end;
+  }
+}
+
+button {
+  background-color: var(--dark-slate-grey);
+  padding: 1.12rem 1rem .87rem;
+  width: 100%;
+  border-radius: 8px;
+}
+
+// Utility Classes
+.visible {
+  display: grid;
+}
+
+.hidden {
+  display: none;
 }

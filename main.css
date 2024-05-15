@@ -436,6 +436,9 @@ button {
   margin: 0;
 }
 
+.card {
+  display: block;
+}
 .card__picture {
   width: 100%;
 }
@@ -471,9 +474,38 @@ button {
 .card__content__form input::placeholder {
   opacity: 0.5;
 }
-.card__content__form button {
+
+.success {
+  padding: 9.31rem 1.5rem 2.5rem;
+  display: none;
+  grid-template-rows: repeat(3, max-content) auto;
+  height: 100vh;
+}
+.success img {
+  margin-bottom: 2.5rem;
+}
+.success h1 {
+  margin-bottom: 1.5rem;
+}
+.success div {
+  height: 100%;
+  display: flex;
+}
+.success div button {
+  align-self: flex-end;
+}
+
+button {
   background-color: var(--dark-slate-grey);
   padding: 1.12rem 1rem 0.87rem;
   width: 100%;
   border-radius: 8px;
+}
+
+.visible {
+  display: grid;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
