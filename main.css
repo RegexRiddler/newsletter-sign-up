@@ -7,7 +7,6 @@
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
-  min-width: 0;
 }
 
 /* Document */
@@ -374,6 +373,7 @@ th {
 
 :root {
   --tomato: hsl(4, 100%, 67%);
+  --tomato-transparent: hsla(4, 100%, 67%, .15);
   --dark-slate-grey: hsl(234, 29%, 20%);
   --charcoal-grey: hsl(235, 18%, 26%);
   --grey: hsl(231, 7%, 60%);
@@ -404,8 +404,13 @@ h1 {
   font-size: 2.5rem;
   line-height: 100%;
 }
+@media (min-width: 960px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
 
-label {
+label, span {
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -436,56 +441,118 @@ button {
   margin: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--dark-slate-grey);
+}
+
 .card {
   display: block;
+  max-width: 500px;
+  box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+  background-color: var(--white);
+  align-self: center;
+  transition: all 400ms ease;
 }
-.card__picture {
+@media (min-width: 960px) {
+  .card {
+    display: flex;
+    max-width: 928px;
+    padding: 24px;
+    border-radius: 36px;
+    transition: all 400ms ease;
+  }
+}
+@media (min-width: 960px) {
+  .card__picture {
+    width: auto;
+    order: 2;
+  }
+}
+.card__picture > img {
   width: 100%;
 }
+@media (min-width: 960px) {
+  .card__picture > img {
+    width: auto;
+  }
+}
 .card__content {
-  padding: 2.5rem 1.5rem;
+  padding: 40px 24px;
+}
+@media (min-width: 960px) {
+  .card__content {
+    padding: 73px 64px 0 40px;
+  }
 }
 .card__content > h1, .card__content > p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 .card__content ul {
-  margin-bottom: 2.56rem;
+  margin-bottom: 40px;
 }
 .card__content ul > li {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 0.63rem;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
 }
 .card__content ul > li:last-child {
   margin-bottom: 0;
 }
-.card__content__form label {
-  display: block;
-  margin-bottom: 0.5rem;
+.card__content__form div {
+  display: flex;
+  justify-content: space-between;
+}
+.card__content__form div > span {
+  color: var(--tomato);
 }
 .card__content__form input {
-  border: 1px solid var(--grey-25);
+  border: 1.5px solid var(--grey-25);
   border-radius: 8px;
-  padding: 1rem 1.5rem;
+  padding: 16px 24px;
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
+  outline: none;
+}
+.card__content__form input:active, .card__content__form input:focus, .card__content__form input:target {
+  border: 1.5px solid var(--dark-slate-grey);
 }
 .card__content__form input::placeholder {
   opacity: 0.5;
 }
 
 .success {
-  padding: 9.31rem 1.5rem 2.5rem;
+  padding: 48px 64px;
   display: none;
   grid-template-rows: repeat(3, max-content) auto;
   height: 100vh;
+  max-width: 500px;
+  background-color: var(--white);
+  transition: all 400ms ease;
+}
+@media (min-width: 960px) {
+  .success {
+    height: auto;
+    max-width: 504px;
+    border-radius: 36px;
+    box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+    align-self: center;
+    padding: 48px 64px 64px;
+    transition: all 400ms ease;
+  }
 }
 .success img {
-  margin-bottom: 2.5rem;
+  margin-bottom: 40px;
 }
 .success h1 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
+}
+.success p {
+  margin-bottom: 40px;
 }
 .success div {
   height: 100%;
@@ -497,9 +564,15 @@ button {
 
 button {
   background-color: var(--dark-slate-grey);
-  padding: 1.12rem 1rem 0.87rem;
+  padding: 16px 24px;
   width: 100%;
   border-radius: 8px;
+  outline: none;
+}
+button:hover, button:active, button:focus {
+  background: linear-gradient(204deg, #FF6A3A 0%, #FF527B 100%);
+  box-shadow: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+  transition: all 300ms ease;
 }
 
 .visible {
@@ -508,4 +581,17 @@ button {
 
 .hidden {
   display: none;
+}
+
+.error {
+  border-color: var(--tomato) !important;
+  background-color: var(--tomato-transparent);
+  color: var(--tomato);
+}
+.error:active, .error:focus, .error:target {
+  border: 1.5px solid var(--dark-slate-grey) !important;
+}
+.error::placeholder {
+  color: var(--tomato);
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
