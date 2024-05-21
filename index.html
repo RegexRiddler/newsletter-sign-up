@@ -41,7 +41,7 @@
           <label for="email">Email address</label>
           <span id="error-message" class="hidden">Valid email required</span>
         </div>
-        <input type="email" name="email" id="email" placeholder="email@company.com">
+        <input type="email" name="email" id="email" placeholder="email@company.com" autocomplete="email" autofocus>
         <button type="submit" id="submit">Subscribe to monthly newsletter</button>
       </form>
     </article>
@@ -50,21 +50,10 @@
   <aside class="success">
     <img src="./assets/images/icon-success.svg" alt="checkmark">
     <h1>Thanks for subscribing!</h1>
-    <p>A confirmation email has been sent to <strong id="email-confirmation">ash@loremcompany.com</strong>. 
+    <p>A confirmation email has been sent to <strong id="email-confirmation"></strong>. 
        Please open it and click the button inside to confirm your subscription.</p>
     <div><button type="reset" id="dismiss">Dismiss message</button></div>
   </aside>
-
-  <!-- Success message start -->
-
-  <!-- 
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-   -->
-
-  <!-- Success message end -->
   
   <footer class="attribution">
     <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
